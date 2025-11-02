@@ -29,5 +29,5 @@ jobs:
       - name: Deploy to Azure App Service Test
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'web-app-nithin'
+          app-name: 'springboot-app-nithin'
           package: '${{ github.workspace }}/target/*.jar' # Adjust if your JAR path is different
