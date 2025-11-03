@@ -40,7 +40,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: contregnithin1.azurecr.io/test-spring-boot-app-1:${{ github.sha }}
+          tags: contregnithin1.azurecr.io/test-spring-boot-app-2:${{ github.sha }}
           platforms: linux/amd64
 
       - name: Set AKS context
@@ -56,5 +56,5 @@ jobs:
       - name: Deploy to AKS with Helm
         run: |
           helm upgrade --install spring-app-release ./helm \
-            --set image.repository=contregnithin1.azurecr.io/test-spring-boot-app-1 \
+            --set image.repository=contregnithin1.azurecr.io/test-spring-boot-app-2 \
             --set image.tag=${{ github.sha }}

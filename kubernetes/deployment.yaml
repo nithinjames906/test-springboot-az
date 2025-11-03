@@ -18,7 +18,7 @@ spec:
         - name: spring-app-container
           # The image name format expected by the azure/k8s-deploy action
           # The action will replace $(IMAGE_TAG) with the actual SHA tag of the image
-          image: test-spring-boot-app-1/test-spring-boot:$(IMAGE_TAG)
+          image: test-spring-boot-app-2/test-spring-boot:$(IMAGE_TAG)
           ports:
             - containerPort: 8080 # The port your Spring Boot app listens on
           resources:
