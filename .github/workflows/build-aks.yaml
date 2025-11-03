@@ -47,4 +47,4 @@ jobs:
         run: |
           kubectl apply -f kubernetes/deployment.yaml
           kubectl apply -f kubernetes/service.yaml
-          kubectl set image deployment/test-spring-boot-app-deployment test-spring-boot-app-container=containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }}
+          kubectl set image deployment/spring-app-deployment-nithin test-spring-boot-container=containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }}
