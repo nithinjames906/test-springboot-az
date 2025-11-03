@@ -25,7 +25,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Log in to Azure Container Registry
+      - name: Log in to Azure Container Registry New PWD
         uses: azure/docker-login@v1
         with:
           login-server: containeregnithin.azurecr.io
