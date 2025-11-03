@@ -34,7 +34,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }} .
+          docker build --platform linux/amd64 -t containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }} .
           docker push containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }}
 
       - name: Set AKS context
