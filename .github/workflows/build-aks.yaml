@@ -43,8 +43,12 @@ jobs:
           resource-group: resource-group-nithin-us
           cluster-name: aks-nithin-us
 
-      - name: Deploy to AKS
+      - name: Install Helm
         run: |
-          kubectl apply -f kubernetes/deployment.yaml
-          kubectl apply -f kubernetes/service.yaml
-          kubectl set image deployment/spring-app-deployment-nithin spring-app-container=containeregnithin.azurecr.io/test-spring-boot-app:${{ github.sha }}
+          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+      - name: Deploy to AKS with Helm
+        run: |
+          helm upgrade --install spring-app-release ./helm \
+            --set image.repository=containeregnithin.azurecr.io/test-spring-boot-app \
+            --set image.tag=${{ github.sha }}
